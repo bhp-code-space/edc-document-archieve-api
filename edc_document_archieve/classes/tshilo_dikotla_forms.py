@@ -15,15 +15,16 @@ class TshiloDikotlaForms:
         ]
         app_models = django_apps.get_app_config(self.odk_app).get_models()
         for model in app_models:
-            if model._meta.verbose_name.istitle() and model._meta.verbose_name not in excluded_apps:
+            if (model._meta.verbose_name.istitle() and model._meta.verbose_name
+                    not in excluded_apps):
                 models.append({
                     'app_label': model._meta.app_label,
                     'model_name': model._meta.verbose_name
                 })
             if model._meta.verbose_name == 'Note to file':
                 models.append({
-                        'app_label': model._meta.app_label,
-                        'model_name': model._meta.verbose_name
+                    'app_label': model._meta.app_label,
+                    'model_name': model._meta.verbose_name
                 })
         return models
 
@@ -38,13 +39,13 @@ class TshiloDikotlaForms:
         data = {
             'crfs': self.maternal_crfs,
             'non_crfs': self.non_crfs
-            }
+        }
         return data
 
     @property
     def infant_forms(self):
         data = {
-                'crfs': [],
-                'non_crfs': self.non_crfs
-            }
+            'crfs': [],
+            'non_crfs': self.non_crfs
+        }
         return data

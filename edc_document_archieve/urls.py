@@ -1,7 +1,7 @@
-from django.urls import include, path
-from .views import CustomAuthToken, HomeView
 from django.contrib import admin
+from django.urls import include, path
 
+from .views import CustomAuthToken, HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,5 +9,3 @@ urlpatterns = [
     path('api-token-auth/', CustomAuthToken.as_view()),
     path('projects/', HomeView.as_view()),
 ]
-
-

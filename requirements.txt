@@ -1,0 +1,7 @@
+setuptools
+djangorestframework
+Django
+pytz
+git+https://github.com/botswana-harvard/edc-appointment@develop#egg=edc-appointment
+python-dateutil
+Pillow
